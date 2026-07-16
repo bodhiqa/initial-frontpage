@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>bodhiqa — Launching Soon</title>
+
+    <meta name="description"
+        content="A modern assessment platform for educators, institutions, and learners. Launching soon." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+
+            --oxford: #14213D;
+            --green: #0F5B3D;
+            --graphite: #3B3B3B;
+            --white: #F7F6F2;
+            --line: rgba(20, 33, 61, .12);
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background: var(--white);
+            color: var(--graphite);
+            font-family: Inter, sans-serif;
+            overflow-x: hidden;
+
+            background-image:
+                radial-gradient(circle at center,
+                    rgba(15, 91, 61, .05),
+                    transparent 45%);
+
+        }
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            opacity: .035;
+
+            background-image:
+                radial-gradient(#000 0.4px, transparent 0.4px);
+
+            background-size: 14px 14px;
+
+            pointer-events: none;
+
+        }
+
+        nav {
+
+            height: 80px;
+
+            width: min(1200px, 92%);
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .brand {
+
+            display: flex;
+            align-items: center;
+            gap: 2px;
+
+            font-weight: 600;
+            color: var(--oxford);
+
+            letter-spacing: .4px;
+
+        }
+
+        .brand img {
+
+            width: 153px;
+            height: 102px;
+
+        }
+
+        .brand span {
+
+            font-size: 20px;
+
+        }
+
+        .nav-links {
+
+            display: flex;
+            gap: 36px;
+
+        }
+
+        .nav-links a {
+
+            text-decoration: none;
+            color: var(--graphite);
+
+            font-size: 15px;
+            transition: .3s;
+
+        }
+
+        .nav-links a:hover {
+
+            color: var(--green);
+
+        }
+
+        main {
+
+            min-height: calc(50vh - 50px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .hero {
+
+            width: min(850px, 75%);
+            text-align: center;
+
+            animation: fadeUp 1.2s ease;
+
+        }
+
+        .logo {
+
+            width: 140px;
+            margin-bottom: 10px;
+
+            filter: drop-shadow(0 8px 25px rgba(15, 91, 61, .10));
+
+        }
+
+        h1 {
+
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(56px, 7vw, 92px);
+            color: var(--oxford);
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+        }
+
+        h2 {
+
+            margin-top: 22px;
+
+            font-weight: 200;
+
+            color: var(--green);
+
+            font-size: clamp(20px, 2vw, 20px);
+
+        }
+
+        .description {
+
+            margin: 42px auto;
+
+            max-width: 680px;
+
+            font-size: 18px;
+            line-height: 1.9;
+
+            color: #555;
+
+        }
+
+        .coming {
+
+            display: inline-block;
+
+            margin-bottom: 42px;
+
+            padding: 10px 22px;
+
+            border: 1px solid rgba(15, 91, 61, .2);
+
+            border-radius: 100px;
+
+            color: var(--green);
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+
+        }
+
+        .button {
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 220px;
+            height: 56px;
+
+            text-decoration: none;
+
+            background: var(--oxford);
+
+            color: white;
+
+            border-radius: 999px;
+
+            transition: .35s;
+
+            font-weight: 500;
+
+            box-shadow: 0 14px 35px rgba(20, 33, 61, .15);
+
+        }
+
+        .button:hover {
+
+            background: var(--green);
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 18px 45px rgba(15, 91, 61, .20);
+
+        }
+
+        section {
+
+            width: min(1000px, 90%);
+
+            margin: auto;
+
+        }
+
+        hr {
+
+            margin: 90px 0;
+
+            border: none;
+            border-top: 1px solid var(--line);
+
+        }
+
+        .values {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            text-align: center;
+
+        }
+
+        .values div {
+
+            color: var(--oxford);
+
+            font-weight: 500;
+
+            font-size: 18px;
+
+            letter-spacing: .6px;
+
+        }
+
+        blockquote {
+
+            font-family: "Cormorant Garamond", serif;
+
+            text-align: center;
+
+            font-size: clamp(25px, 4vw, 32px);
+
+            color: #888;
+
+            font-style: italic;
+
+            padding: 10px;
+
+        }
+
+        footer {
+
+            margin-top: 25px;
+
+            padding: 45px 0;
+
+            border-top: 1px solid var(--line);
+
+            text-align: center;
+
+            color: #777;
+
+            line-height: 2;
+
+            font-size: 15px;
+
+        }
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+                transform: translateY(40px);
+
+            }
+
+            to {
+
+                opacity: 1;
+                transform: translateY(0);
+
+            }
+
+        }
+
+        @media (max-width:768px) {
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+            .logo {
+
+                width: 110px;
+
+            }
+
+            .description {
+
+                font-size: 17px;
+
+            }
+
+            .values {
+
+                gap: 40px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="brand">
+
+            <img src="logo-bodhiqa.png" alt="bodhiqa">
+
+            <span>bodhiqa</span>
+
+        </div>
+
+
+
+    </nav>
+
+    <main>
+
+        <div class="hero">
+
+            <h2>        <blockquote>
+
+            “न चोरहार्यं न च राजहार्यं न भ्रातृभाज्यम् न च भारकारी ।
+<br>
+व्यये कृते वर्धत एव नित्यं विद्याधनं सर्वधनप्रधानम् ॥”
+
+        </blockquote></h2>
+
+
+            <div class="coming">
+                Launching Soon
+            </div>
+
+            <br>
+
+            <a class="button" href="#">
+                Get Launch Updates
+            </a>
+
+        </div>
+
+    </main>
+
+    <section>
+
+
+
+    </section>
+
+    <footer>
+
+        © 2026 bodhiqa
+
+    </footer>
+
+</body>
+
+</html>
